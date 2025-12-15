@@ -12,7 +12,7 @@ resize();
 const particles = [];
 const COUNT = 90;
 
-const STAR_COLOR = { r: 255, g: 245, b: 210 }; // #fff5d2
+const STAR_COLOR = { r: 243, g: 128, b: 140 }; // #f3808c
 
 function makeParticle() {
   const big = Math.random() < 0.18;        // some larger stars

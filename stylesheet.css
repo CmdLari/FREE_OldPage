@@ -39,7 +39,7 @@
 
 html {
   min-height: 100%;
-  background-color: var(--vanilla);
+  background-color: var(--blush);
 }
 
 body {
@@ -75,9 +75,9 @@ h2 {
   text-align: center;
   font-family: "Subheader", sans-serif;
   line-height: 1.1;
-  color: var(--offwhite);
+  color: var(--gold);
   font-size: xx-large;
-  text-shadow: 0 0 3px var(--offwhite);
+  text-shadow: 0 0 3px var(--gold);
 }
 
 p {
@@ -88,21 +88,21 @@ p {
   LAYOUT CONTAINERS
 *********************************************************************************/
 .outer-box {
-  width: 40%;
+  width: 35%;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: var(--darkblue);
-  box-shadow: 0 0 20px var(--darkblue);
+  background-color: var(--vanilla);
+  box-shadow: 0 0 20px var(--vanilla);
   transition: box-shadow 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .outer-box:hover {
-  box-shadow: 0 0 40px var(--darkblue);
+  box-shadow: 0 0 40px var(--vanilla);
 }
 
 .main-box {
   width: 100%;
-  background-color: var(--darkblue);
-  color: var(--vanilla);
+  background-color: var(--vanilla);
+  color: var(--darkblue);
   position: relative;
   z-index: 1;
 
@@ -211,18 +211,21 @@ a:hover {
 
 .headerbox {
   position: sticky;
+  left: 0;   
+  width: 30vw; 
   top: 0%;
   z-index: 9999;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  background-color: var(--blush);
+  background-color: var(--darkblue);
   align-items: center;
-  width: 100vw; 
   margin: 0;   
-  padding: 20px;
+  padding: 7px;
   line-height: 0.4;
-
+  border: 3px solid var(--darkblue);
+  border-radius: 0 0 30px 0;
+  box-shadow: var(--darkblue) 0 0 10px;
 }
 
 .headerbox a {
@@ -234,12 +237,12 @@ a:hover {
 }
 
 .headerbox a:hover {
-  color: var(--darkblue);
-  text-shadow: var(--darkblue) 0 0 5px;
+  color: var(--vanilla);
+  text-shadow: var(--vanilla) 0 0 5px;
 }
 
 .headerboxinner1 {
-  flex: 0 0 auto; /* don’t shrink the logo, keep it its natural size */
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   padding-right: 20px;
@@ -252,7 +255,7 @@ a:hover {
 }
 
 .headerboxinner2 {
-  flex: 1 1 0; /* take remaining space, allow wrapping */
+  flex: 1 1 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -264,20 +267,23 @@ a:hover {
 .footerbox {
   position: sticky;
   bottom: 0;
+  left: 70%;   
+  width: 30vw; 
+
   z-index: 9999;
 
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-
-  width: 100vw; 
-  margin: 0;   
-  padding: 20px;
-
-  background-color: var(--blush);
-  line-height: 1;
   gap: 40px;
+
+  padding: 20px;
+  background-color: var(--darkblue);
+  line-height: 1;
+  border: 3px solid var(--darkblue);
+  border-radius: 30px 0 0 0;
+  box-shadow: var(--darkblue) 0 0 10px;
 }
 
 
@@ -289,8 +295,8 @@ a:hover {
 }
 
 .footerbox a:hover {
-    color: var(--darkblue);
-    text-shadow: var(--darkblue) 0 0 5px;
+    color: var(--vanilla);
+    text-shadow: var(--vanilla) 0 0 5px;
 }
 
 .footerbox img {
@@ -325,6 +331,24 @@ a:hover {
   .text-content
   {
     padding: 5% 10%;
+  }
+
+  .footerbox {
+    width: 100vw;
+    border: 0px;
+    border-radius: 0;
+    justify-content: center;
+  }
+
+  .headerbox {
+    width: 100vw;
+    border: 0px;
+    border-radius: 0;
+    justify-content: center;
+  }
+
+  .headerbox img {
+    display: none;
   }
 
   .page-overlay {
