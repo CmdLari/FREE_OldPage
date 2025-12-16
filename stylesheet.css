@@ -40,6 +40,9 @@
 html {
   min-height: 100%;
   background-color: var(--blush);
+box-shadow:
+  inset 400px 0 400px rgba(0,0,0,0.8),
+  inset -400px 0 400px rgba(0,0,0,0.8);
 }
 
 body {
@@ -106,8 +109,8 @@ p {
   position: relative;
   z-index: 1;
 
-  line-height: 1.4;
-  letter-spacing: 0.04em;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 .text-content {
@@ -210,7 +213,7 @@ a:hover {
 }
 
 .headerbox {
-  position: sticky;
+  position: fixed;
   left: 0;   
   width: 30vw; 
   top: 0%;
@@ -226,6 +229,9 @@ a:hover {
   border: 3px solid var(--darkblue);
   border-radius: 0 0 30px 0;
   box-shadow: var(--darkblue) 0 0 10px;
+
+  outline: 10px solid var(--darkblue);
+  outline-offset: 8px;
 }
 
 .headerbox a {
@@ -265,7 +271,7 @@ a:hover {
 }
 
 .footerbox {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   left: 70%;   
   width: 30vw; 
@@ -284,6 +290,9 @@ a:hover {
   border: 3px solid var(--darkblue);
   border-radius: 30px 0 0 0;
   box-shadow: var(--darkblue) 0 0 10px;
+
+  outline: 10px solid var(--darkblue);
+  outline-offset: 8px;
 }
 
 
@@ -335,20 +344,41 @@ a:hover {
 
   .footerbox {
     width: 100vw;
+    left: auto;
     border: 0px;
     border-radius: 0;
     justify-content: center;
+    outline: none;
   }
 
   .headerbox {
     width: 100vw;
     border: 0px;
+    flex-direction: column;
     border-radius: 0;
     justify-content: center;
+    align-items: center;
+    outline: none;
+    display: flex;
+    padding-bottom: 15px;
   }
 
+
   .headerbox img {
-    display: none;
+    object-fit: contain;  
+    width: 20%; 
+    height: auto;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  .headerboxinner2 {
+    justify-content: center;
+}
+
+  .headerbox a {
+    font-size: medium;
+    padding: 5px;
   }
 
   .page-overlay {
