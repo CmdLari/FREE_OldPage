@@ -7,36 +7,47 @@
   <link rel="icon" type="image/x-icon" href="./assets/ui/favicon.ico">
   <link rel="stylesheet" href="stylesheet.css">
   <title>Larissa Pychlau | Lapys Studio</title>
+
+  <script src="stars.js" defer></script>
+  <script src="gamesmenu.js" defer></script>
 </head>
 
 <body>
+  <!-- header -->
+  <div class="headerbox">
+    <div class="headerboxinner1">
+      <img src="assets/ui/headerheader.png" alt="Logo" style="padding: 10px;">
+    </div>
 
-    <div class="headerbox">
-            <div class="headerboxinner1">
-                <img src="assets/ui/headerheader.png" alt="Logo" style="padding: 10px;"> 
-            </div>
-            <div class="headerboxinner2">
-                <a href="./index.html">ABOUT</a>
-                <a href="./games_outOfWater.html">GAMES</a>
-                <a href="./design.html">DESIGN</a>
-                <a href="./illustration.html">ILLUSTRATION</a>
-                <a href="./photography.html">PHOTOGRAPHY</a>
-            </div>
-        </div>
-        <!-- overlay -->
-        <div class="page-overlay"></div>
+    <div class="headerboxinner2">
+      <a href="./index.html"><img src="assets/ui/menu_about.png" alt="About"></a>
 
-        <!-- background effect -->
-        <canvas id="stars-canvas"></canvas>
-        <script src="stars.js" defer></script>
+    <button class="games-toggle" aria-expanded="false" type="button">
+    <img src="assets/ui/menu_games.png" alt="Games menu">
+    </button>
 
-        <div class="outer-box">
-            <!-- header image -->
-            <div class="header-banner">
-            <img src="assets/ui/header.png" alt="Lapys banner">
-            </div>
+      <a href="./gallery.html"><img src="assets/ui/menu_gallery.png" alt="Gallery"></a>
+    </div>
+  </div>
 
-    <!-- socials -->
+    <!-- games dropdown -->
+        <div class="games-box" id="gamesBox">
+        <a href="./games_outOfWater.html">Out of Water</a>
+        <a href="./games_other.html">Other Games</a>
+    </div>
+
+  <!-- overlay -->
+  <div class="page-overlay"></div>
+
+  <!-- background effect -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- main centered page -->
+  <div class="outer-box">
+    <div class="header-banner">
+      <img src="assets/ui/header.png" alt="Lapys banner">
+    </div>
+
     <div class="headerbox_socials">
       <a href="https://lapys.carrd.co/" target="_blank" rel="noopener noreferrer"><img src="assets/ui/carrd.png" alt=""></a>
       <a href="https://store.steampowered.com/developer/lapysG" target="_blank" rel="noopener noreferrer"><img src="assets/ui/steam.png" alt=""></a>
@@ -50,78 +61,77 @@
       <a href="mailto:larissapychlau@gmail.com"><img src="assets/ui/mail.png" alt=""></a>
     </div>
 
-    <!-- MAIN CONTENT -->
     <div class="main-box">
-        <div class="text-content">
-            <h1>Lapys</h1>
-            <h2>cute, cursed & handmade</h2>
-            <hr>
-            
-            <p>
-                <b1>LAPYS</b1> is a solo studio crafting small, emotionally resonant games with strong visual identity and tightly integrated design. Every project is handmade - <b2>from code to character art</b2> - with a focus on mood, replayability, and narrative tone.
-                <br>
-                Hi, I’m <b2>Larissa Pychlau</b2> - the developer, designer, and illustrator behind <b1>LAPYS</b1>, a solo studio crafting cozy, character-driven games with a handmade charm and a little chaos under the hood.
-                <br><br>
-                <b3>Handmade across disciplines</b3> from gameplay logic to custom UI and hand-drawn visuals
-                <br>
-                <b3>Systems with emotional weight</b3> branching stories, stat-driven interactions, reactive dialogue
-                <br>
-                <b3>Cohesive creative vision</b3> aligning art direction, tone, and structure across mediums
-            </p>
-        </div>
-        <img src="assets/images_about/portrait.png" alt="Portrait of Larissa Pychlau">
+      <div class="text-content">
 
-        <div class="text-content">
-            <h1>About the studio</h1>
-            <h2>Developer · Designer · Illustrator · Monster NPC Whisperer</h2>
-            <hr>
+        <h1>Lapys</h1>
+        <h2>cute, cursed & handmade</h2>
+        <br>
 
-            <p>
-                I work across <b2>game design, illustration, UI, and photography</b2>, with a passion for building experiences where visuals, systems, and story all speak the same emotional language.
-                <br>
-                With a background in software engineering and visual design, I build almost every part of my games - from logic systems and pixel art to narrative and UI - infusing each world with warmth, intention, and a love for the strange and memorable.
-            </p>
-        </div>
+        <p>
+          <b1>LAPYS</b1> is a solo studio crafting small, emotionally resonant games with strong visual identity and tightly integrated design. Every project is handmade - <b2>from code to character art</b2> - with a focus on mood, replayability, and narrative tone.
+          <br>
+          Hi, I’m <b2>Larissa Pychlau</b2> - the developer, designer, and illustrator behind <b1>LAPYS</b1>, a solo studio crafting cozy, character-driven games with a handmade charm and a little chaos under the hood.
+          <br><br>
+          <b3>Handmade across disciplines</b3> from gameplay logic to custom UI and hand-drawn visuals
+          <br>
+          <b3>Systems with emotional weight</b3> branching stories, stat-driven interactions, reactive dialogue
+          <br>
+          <b3>Cohesive creative vision</b3> aligning art direction, tone, and structure across mediums
+        </p>
+      </div>
 
-        <!-- <img src="assets/images_about/Lapys_Moodboard2.png" alt="Studio moodboard"> -->
+      <img src="assets/images_about/portrait.png" alt="Portrait of Larissa Pychlau">
 
-        <div class="text-content">
-            <h1>What I make</h1>
-            <h2>and why</h2>
-            <hr>
+      <div class="text-content">
+        <h1>About the studio</h1>
+        <h2>Developer · Designer · Illustrator · Monster NPC Whisperer</h2>
+        <br>
 
-            <p>
-                I create playful, narrative-centered projects, where visuals and emotion speak the same language.
-                <br>
-                This spans everything I do - <b2>from design and code to writing, photography, and illustration</b2>.
-                <br>
-                I love work that lets me use the full stack of my skills and <b2>I aim to bring this passion to all my projects</b2>.
+        <p>
+          I work across <b2>game design, illustration, UI, and photography</b2>, with a passion for building experiences where visuals, systems, and story all speak the same emotional language.
+          <br>
+          With a background in software engineering and visual design, I build almost every part of my games - from logic systems and pixel art to narrative and UI - infusing each world with warmth, intention, and a love for the strange and memorable.
+        </p>
+      </div>
 
-                <br><br>
-                <b2>Writing & Narrative Development</b2>
-                Branching narratives, dialogue, tutorials
-                <br>
-                <b2>Photography (Art & Commercial)</b2>
-                Coordinated looks, moody visuals
-                <br>
-                <b2>Game Design & Coding</b2>
-                Ren’Py, Pygame, object oriented, architecture design
-                <br>
-                <b2>Visual Design & UI</b2>
-                Cohesive designs from buttons to layouts, CIs
-                <br>
-                <b2>Illustration & Character Design</b2>
-                hand-drawn, pixel art, bespoke
-            </p>
-        </div>
+      <div class="text-content">
+        <h1>What I make</h1>
+        <h2>and why</h2>
+        <br>
 
-        <img src="assets/images_about/Lapys_Moodboard.png" alt="Lapys moodboard">
+        <p>
+          I create playful, narrative-centered projects, where visuals and emotion speak the same language.
+          <br>
+          This spans everything I do - <b2>from design and code to writing, photography, and illustration</b2>.
+          <br>
+          I love work that lets me use the full stack of my skills and <b2>I aim to bring this passion to all my projects</b2>.
+          <br><br>
+          <b2>Writing & Narrative Development</b2>
+          Branching narratives, dialogue, tutorials
+          <br>
+          <b2>Photography (Art & Commercial)</b2>
+          Coordinated looks, moody visuals
+          <br>
+          <b2>Game Design & Coding</b2>
+          Ren’Py, Pygame, object oriented, architecture design
+          <br>
+          <b2>Visual Design & UI</b2>
+          Cohesive designs from buttons to layouts, CIs
+          <br>
+          <b2>Illustration & Character Design</b2>
+          hand-drawn, pixel art, bespoke
+        </p>
+      </div>
 
+      <img src="assets/images_about/Lapys_Moodboard.png" alt="Lapys moodboard">
     </div>
-        </div>
-            <div class="footerbox">
-            <img src="assets/ui/footerimg.png" alt="footer icon">
-            <a href="./imprint.html">IMPRINT</a>
-        </div>
-    </body>
+  </div>
+
+  <!-- footer (overlay UI) -->
+  <div class="footerbox">
+    <img src="assets/ui/footerimg.png" alt="footer icon">
+    <a href="./imprint.html">IMPRINT</a>
+  </div>
+</body>
 </html>

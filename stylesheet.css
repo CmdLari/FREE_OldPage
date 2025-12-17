@@ -40,9 +40,6 @@
 html {
   min-height: 100%;
   background-color: var(--blush);
-box-shadow:
-  inset 400px 0 400px rgba(0,0,0,0.8),
-  inset -400px 0 400px rgba(0,0,0,0.8);
 }
 
 body {
@@ -52,6 +49,11 @@ body {
   font-size: large;
   position: relative;
   overflow-x: hidden;
+
+  /* side vignette */
+  box-shadow:
+    inset 400px 0 400px rgba(0,0,0,0.8),
+    inset -400px 0 400px rgba(0,0,0,0.8);
 }
 
 /********************************************************************************
@@ -117,6 +119,7 @@ p {
   padding: 2% 12%;
 }
 
+/* full-width images within the content column */
 .main-box img {
   display: block;
   width: 100%;
@@ -132,9 +135,8 @@ p {
   color: var(--gold);
 }
 
-
 /********************************************************************************
-  LINKS + YOUR CUSTOM TAGS
+  LINKS
 *********************************************************************************/
 a {
   color: var(--blush);
@@ -152,7 +154,7 @@ a:hover {
   width: 60%;
   margin: 40px auto 0;
   position: relative;
-  z-index: 50;
+  z-index: 2;
 
   display: flex;
   align-items: center;
@@ -199,11 +201,10 @@ a:hover {
   pointer-events: none;
 
   background-image: url("assets/ui/overlay.gif");
-  background-repeat: repeat-y;       
+  background-repeat: repeat-y;
   background-position: top center;
-  background-size: 100% auto; 
+  background-size: 100% auto;
 }
-
 
 #stars-canvas {
   position: fixed;
@@ -212,39 +213,52 @@ a:hover {
   z-index: 99;
 }
 
+/********************************************************************************
+  HEADER (FIXED UI)
+*********************************************************************************/
 .headerbox {
   position: fixed;
-  left: 0;   
-  width: 30vw; 
-  top: 0%;
+  top: 0;
+  left: 0;
+  width: 33vw;
   z-index: 9999;
-  justify-content: center;
+
   display: flex;
   flex-wrap: wrap;
-  background-color: var(--darkblue);
   align-items: center;
-  margin: 0;   
+  justify-content: center;
+
+  background-color: var(--darkblue);
+  margin: 0;
   padding: 7px;
   line-height: 0.4;
-  border: 3px solid var(--darkblue);
+
   border-radius: 0 0 30px 0;
-  box-shadow: var(--darkblue) 0 0 10px;
+  box-shadow: 0 0 10px var(--darkblue);
 
   outline: 10px solid var(--darkblue);
   outline-offset: 8px;
 }
 
-.headerbox a {
-  font-family: 'Header', sans-serif;
+.headerbox a,
+.headerbox .games-toggle {
+  font-family: "Header", sans-serif;
   padding: 10px;
   font-size: x-large;
   text-decoration: none;
   color: var(--vanilla);
 }
 
-.headerbox a:hover {
+.headerbox a:hover,
+.headerbox .games-toggle:hover {
   color: var(--vanilla);
-  text-shadow: var(--vanilla) 0 0 5px;
+  text-shadow: 0 0 5px var(--vanilla);
+}
+
+.games-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .headerboxinner1 {
@@ -265,21 +279,29 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
+  /* choose ONE:
+     center -> centered nav
+     flex-end -> right aligned nav
+  */
   justify-content: flex-end;
+
   gap: 10px;
   margin-right: 30px;
 }
 
-.footerbox {
+/********************************************************************************
+  GAMES MENU (DROPDOWN)
+*********************************************************************************/
+.games-box {
+  display: none;
   position: fixed;
-  bottom: 0;
-  left: 70%;   
-  width: 30vw; 
-
+  top: 0;
+  right: 0;
+  width: 33vw;
   z-index: 9999;
 
-  display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
@@ -287,25 +309,68 @@ a:hover {
   padding: 20px;
   background-color: var(--darkblue);
   line-height: 1;
-  border: 3px solid var(--darkblue);
-  border-radius: 30px 0 0 0;
-  box-shadow: var(--darkblue) 0 0 10px;
+
+  border-radius: 0 0 0 30px;
+  box-shadow: 0 0 10px var(--darkblue);
 
   outline: 10px solid var(--darkblue);
   outline-offset: 8px;
 }
 
+.games-box.open {
+  display: flex;
+}
 
-.footerbox a{
-  font-family: 'Copy bold', sans-serif;
+
+.games-box a {
+  display: block;
+  padding: 8px 0;
+  color: var(--vanilla);
+  text-decoration: none;
+}
+
+.games-box a:hover {
+  color: var(--gold);
+}
+
+/********************************************************************************
+  FOOTER (FIXED UI)
+*********************************************************************************/
+.footerbox {
+  position: fixed;
+  bottom: 0;
+  right: 0;           
+  width: 33vw;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  padding: 20px;
+  background-color: var(--darkblue);
+  line-height: 1;
+
+  border-radius: 30px 0 0 0;
+  box-shadow: 0 0 10px var(--darkblue);
+
+  outline: 10px solid var(--darkblue);
+  outline-offset: 8px;
+}
+
+.footerbox a {
+  font-family: "Copy", sans-serif; /* fixed: no "Copy bold" font-face exists */
+  font-weight: 700;
   font-size: large;
   text-decoration: none;
   color: var(--vanilla);
 }
 
 .footerbox a:hover {
-    color: var(--vanilla);
-    text-shadow: var(--vanilla) 0 0 5px;
+  color: var(--vanilla);
+  text-shadow: 0 0 5px var(--vanilla);
 }
 
 .footerbox img {
@@ -321,8 +386,9 @@ a:hover {
   .headerbox_socials {
     width: 100%;
   }
+
   .headerbox_socials a {
-    font-size: 0;    /* icon-only */
+    font-size: 0; /* icon-only */
     padding-left: 0;
   }
 }
@@ -333,61 +399,66 @@ a:hover {
   }
 
   .main-box {
-    /* padding: 10%; */
     text-align: center;
   }
 
-  .text-content
-  {
+  .text-content {
     padding: 5% 10%;
   }
 
   .footerbox {
     width: 100vw;
-    left: auto;
-    border: 0px;
+    right: 0;
     border-radius: 0;
     justify-content: center;
     outline: none;
+  }
+
+  .games-box {
+    width: 100vw;
+    border-radius: 0;
+    outline: none;
+    display: none;
+    justify-content: center;
   }
 
   .headerbox {
     width: 100vw;
-    border: 0px;
-    flex-direction: column;
     border-radius: 0;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     outline: none;
-    display: flex;
     padding-bottom: 15px;
   }
 
-
-  .headerbox img {
-    object-fit: contain;  
-    width: 20%; 
+  .headerboxinner1 img {
+    object-fit: contain;
+    width: 20%;
     height: auto;
-    margin: auto;
-    margin-bottom: 10px;
+    margin: 0 auto 10px;
   }
 
   .headerboxinner2 {
     justify-content: center;
-}
+    margin-right: 0;
+  }
 
-  .headerbox a {
+  .headerbox a,
+  .headerbox .games-toggle {
     font-size: medium;
     padding: 5px;
   }
 
-  .page-overlay {
-    display: none;
+  .games-box {
+    width: 100vw;
+    left: 0;
+    top: 120px;      /* adjust for stacked mobile header */
+    border-radius: 0;
   }
 
-  .boxinner1,
-  .boxinner2 {
-    text-align: center;
+  .page-overlay {
+    display: none;
   }
 
   iframe {
